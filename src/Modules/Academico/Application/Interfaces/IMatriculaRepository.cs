@@ -1,0 +1,1 @@
+/*aluno,coordenacao,disciplina,matricula,periodo,professor,turma,usuarios*/
