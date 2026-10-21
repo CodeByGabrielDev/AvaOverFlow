@@ -1,3 +1,5 @@
+using Modules.Academico.Domain.Entities;
+
 namespace Modules.Academico.Application.Domain.Entities;
 
 
@@ -7,8 +9,10 @@ public class Aluno
     public Guid IdUsuario{get;private set;}
     public Usuario Usuario{get; private set;}
 
+
     public Aluno()
     {
         this.Id = new Guid();
+
     }
 }
