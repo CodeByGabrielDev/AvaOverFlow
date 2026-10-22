@@ -18,11 +18,11 @@ public class Matricula
     }
     public Matricula(Guid alunoId,Guid turmaId,StatusMatricula statusMatricula)
     {
-        this.Id = new Guid();
+        this.Id = Guid.NewGuid();
         this.AlunoId = alunoId;
         this.TurmaId = turmaId;
         this.StatusMatricula = statusMatricula;
-        this.DataMatricula = DateTime.Now;
+        this.DataMatricula = DateTime.UtcNow;
 
     }
 }
