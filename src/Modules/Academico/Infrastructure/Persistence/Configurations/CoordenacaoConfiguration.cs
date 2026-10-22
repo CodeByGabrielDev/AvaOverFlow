@@ -8,11 +8,13 @@ public class CoordenacaoConfiguration : IEntityTypeConfiguration<Coordenacao>
 {
     public void Configure(EntityTypeBuilder<Coordenacao> builder)
     {
-        builder.ToTable("COORDENACAO");
+        builder.ToTable("COORDENACOES");
         builder.HasKey(coor=>coor.Id);
+
         builder.HasOne(coor=>coor.Usuario)
                .WithMany(usuario=>usuario.Coordenacaos)
                .HasForeignKey(coor=>coor.UsuarioId)
-               .IsRequired();
+               .IsRequired()
+               .OnDelete(DeleteBehavior.Restrict);
     }
 }

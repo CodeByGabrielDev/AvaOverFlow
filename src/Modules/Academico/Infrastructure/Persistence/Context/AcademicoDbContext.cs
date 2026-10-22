@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using Modules.Academico.Domain.Entities;
 
@@ -6,6 +5,8 @@ namespace Modules.Academico.Infrastructure.Persistence.Context;
 
 public class AcademicoDbContext : DbContext
 {
+    public const string Schema = "academico";
+
     public AcademicoDbContext(
         DbContextOptions<AcademicoDbContext> options)
         : base(options)
@@ -24,6 +25,9 @@ public class AcademicoDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+
+        // Cada módulo do monólito tem suas próprias tabelas (ADR 001).
+        modelBuilder.HasDefaultSchema(Schema);
 
         modelBuilder.ApplyConfigurationsFromAssembly(
             typeof(AcademicoDbContext).Assembly);
