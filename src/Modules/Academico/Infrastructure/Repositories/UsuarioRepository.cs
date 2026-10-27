@@ -33,5 +33,13 @@ public class UsuarioRepository : IUsuarioRepository
         return await this._academicoDbContext.Usuarios.ToListAsync();
     }
 
+    public async Task<Usuario?> FindByCpf(string? Cpf)
+    {
+        return await this._academicoDbContext
+                         .Usuarios
+                         .Where(entidadeUsuario=>entidadeUsuario.Cpf.Equals(Cpf))
+                         .FirstOrDefaultAsync();
+    }
+
 
 }

@@ -7,6 +7,8 @@ public sealed class Usuario
 {
     public Guid Id{get;private set;}
     public string Nome{get;private set;} = null!;
+    public string Cpf{get;private set;}=null!;
+    public string? Telefone{get;private set;}=null!;
     public string Email{get;private set;} = null!;
     public string SenhaHash{get;private set;} = null!;
     public List<Aluno> Alunos{get;private set;} = [];
@@ -19,12 +21,14 @@ public sealed class Usuario
     {
     }
 
-    public Usuario(string nome,string email,string senhaHash,PapelUsuario papelUsuario)
+    public Usuario(string nome,string email,string senhaHash,PapelUsuario papelUsuario,string cpf,string telefone)
     {
         this.Id = Guid.NewGuid();
         this.Ativo = true;
         this.CriadoEm = DateTime.UtcNow;
         this.Nome = nome;
+        this.Cpf = cpf;
+        this.Telefone = telefone;
         this.Email = email;
         this.SenhaHash = senhaHash;
         this.PapelUsuario = papelUsuario;

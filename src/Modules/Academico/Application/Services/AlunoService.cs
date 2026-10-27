@@ -1,3 +1,4 @@
+using Modules.Academico.Application.Interfaces;
 using Modules.Academico.Domain.Entities;
 using Modules.Academico.Domain.Exceptions;
 using Modules.Infrastructure.Repositories;
@@ -8,7 +9,7 @@ namespace Modules.Academico.Application.Services;
 
 public class AlunoService
 {
-    private readonly AlunoRepository _alunoRepository;
+    private readonly IAlunoRepository _alunoRepository;
     public AlunoService(AlunoRepository _alunoRepository)
     {
         this._alunoRepository = _alunoRepository;   
