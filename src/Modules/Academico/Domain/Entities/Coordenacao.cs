@@ -7,8 +7,9 @@ public class Coordenacao
     public Guid UsuarioId{get;private set;}
     public Usuario Usuario{get;private set;} = null!;
 
-    public Coordenacao()
+    public Coordenacao(Guid UsuarioId)
     {
         this.Id = Guid.NewGuid();
+        this.UsuarioId = UsuarioId;
     }
 }

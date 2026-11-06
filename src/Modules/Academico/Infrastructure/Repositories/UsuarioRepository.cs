@@ -26,20 +26,20 @@ public class UsuarioRepository : IUsuarioRepository
     public async Task<Usuario?> FindById(Guid IdUsuario)
     {
         return await this._academicoDbContext.Usuarios.FindAsync(IdUsuario);
-
     }
     public async Task<List<Usuario?>> FindAllUsers()
     {
         return await this._academicoDbContext.Usuarios.ToListAsync();
     }
 
-    public async Task<Usuario?> FindByCpf(string? Cpf)
+
+    public async Task<Usuario?> FindByCpf(string cpf)
     {
         return await this._academicoDbContext
                          .Usuarios
-                         .Where(entidadeUsuario=>entidadeUsuario.Cpf.Equals(Cpf))
+                         .Where(entidadeUsuario=>entidadeUsuario.Cpf.Equals(cpf))
                          .FirstOrDefaultAsync();
+                         
     }
-
 
 }

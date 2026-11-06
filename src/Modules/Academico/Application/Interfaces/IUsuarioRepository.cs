@@ -8,5 +8,6 @@ public interface IUsuarioRepository
     Task<Usuario> FindById(Guid Id);
     Task<List<Usuario>> FindAllUsers();
 
-    Task<Usuario?> FindByCpf(string? cpf);
+    Task<Usuario?> FindByCpf(string cpf);
+
 }

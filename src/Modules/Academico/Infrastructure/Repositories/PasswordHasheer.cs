@@ -10,9 +10,9 @@ public class PasswordHasheer : IPasswordHasher
         _hasher = new Microsoft.AspNetCore.Identity.PasswordHasher<Usuario>();
 
     public string Hash(Usuario usuario, string password)
-{
-    return _hasher.HashPassword(usuario, password);
-}
+    {
+        return _hasher.HashPassword(usuario, password);
+    }
 
     public bool Verify(string password, string passwordHash)
     {

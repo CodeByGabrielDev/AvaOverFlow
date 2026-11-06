@@ -8,9 +8,9 @@ public class Aluno
     public Usuario Usuario{get; private set;} = null!;
 
 
-    public Aluno()
+    public Aluno(Guid IdUsuario)
     {
         this.Id = Guid.NewGuid();
-
+        this.IdUsuario = IdUsuario;
     }
 }
